@@ -1,0 +1,11 @@
+﻿Repair_Shop_ID,Shop_Name,Network_Type,Contact_Number,City,State,Avg_Repair_Days,Specialty
+601,North Star Collision Center,Preferred,206-555-0181,Seattle,WA,6,Collision & Paint
+602,Lone Star Auto Body,Preferred,972-555-0192,Dallas,TX,7,Frame Repair
+603,Suncoast Claims Repair,Partner,305-555-0177,Miami,FL,5,Water Damage
+604,Lakefront Vehicle Works,Preferred,312-555-0144,Chicago,IL,8,Structural Repair
+605,Desert Auto Restore,Partner,602-555-0160,Phoenix,AZ,6,Glass & Paint
+606,Mile High Collision Hub,Preferred,303-555-0131,Denver,CO,7,Collision
+607,Metro Precision Auto,Preferred,212-555-0119,New York,NY,9,Luxury Vehicles
+608,Peachtree Auto Claims,Partner,404-555-0156,Atlanta,GA,6,General Repair
+609,Pacific Coast Body Shop,Preferred,619-555-0107,San Diego,CA,7,SUV & EV Repair
+610,SoCal Rapid Repair,Partner,213-555-0128,Los Angeles,CA,5,Express Repair
