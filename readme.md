@@ -163,4 +163,4 @@ After initial setup, use the wrapper to sync everything (Tables via mirror, File
 
 Thanks for checking out this project! Named after the beautiful mutton snapper (*Lutjanus analis*) — a prized catch in the Florida Keys.
 
-![Mutton Snapper](https://https://upload.wikimedia.org/wikipedia/commons/f/f4/Mutton-snapper-lutjanus-analis.jpg "Mutton Snapper")
+![Mutton Snapper](https://upload.wikimedia.org/wikipedia/commons/f/f4/Mutton-snapper-lutjanus-analis.jpg "Mutton Snapper")
