@@ -162,6 +162,14 @@ After initial setup, use the wrapper to sync everything (Tables via mirror, File
 ![Sync'ed](https://github.com/user-attachments/assets/99e4f6f2-c068-433f-aa6d-b67e46bc961f "Sync'ed")
 
 
+## Contributors
+
+- Hiram Fleitas, Analytics GBB, Microsoft
+- Amol Manocha, Sr Sol Engineer, Microsoft
+- Paras Sitaula, Prin Sol Engineer, Microsoft
+- Sagar Bathe, Prin CSA, Microsoft
+- Sachin Saraf, Prin CSA, Microsoft
+
 ## Thank You
 
 Thanks for checking out this project! Named after the beautiful mutton snapper (*Lutjanus analis*) — a prized catch in the Florida Keys.
