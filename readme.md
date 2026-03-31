@@ -159,6 +159,9 @@ After initial setup, use the wrapper to sync everything (Tables via mirror, File
 .\Run-Sync.ps1
 ```
 
+![Sync'ed](https://github.com/user-attachments/assets/99e4f6f2-c068-433f-aa6d-b67e46bc961f "Sync'ed")
+
+
 ## Thank You
 
 Thanks for checking out this project! Named after the beautiful mutton snapper (*Lutjanus analis*) — a prized catch in the Florida Keys.
