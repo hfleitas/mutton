@@ -165,6 +165,7 @@ After initial setup, use the wrapper to sync everything (Tables via mirror, File
 ## Contributors
 
 - Hiram Fleitas, Analytics GBB, Microsoft
+- Simon Nuss, Prin PM, Microsoft
 - Amol Manocha, Sr Sol Engineer, Microsoft
 - Paras Sitaula, Prin Sol Engineer, Microsoft
 - Sagar Bathe, Prin CSA, Microsoft
