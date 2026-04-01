@@ -41,12 +41,12 @@ $SourceBase = "https://onelake.dfs.fabric.microsoft.com/BCDR1"
 $DestBase   = "https://onelake.dfs.fabric.microsoft.com/BCDR2"
 
 # Items to sync — add or remove entries as needed
-# Mode: "mirror" for Tables (Delta-aware: copy+delete), "sync" for Files
+# Mode: "sync" is the default; use "mirror" for Delta tables if UPDATEs/DELETEs aren't syncing
 $SyncPairs = @(
-    @{ Source = "$SourceBase/LH1.Lakehouse/Tables";  Dest = "$DestBase/LH1.Lakehouse/Tables";  Mode = "mirror" }
-    @{ Source = "$SourceBase/LH1.Lakehouse/Files";   Dest = "$DestBase/LH1.Lakehouse/Files";   Mode = "sync"   }
+    @{ Source = "$SourceBase/LH1.Lakehouse/Tables";  Dest = "$DestBase/LH1.Lakehouse/Tables"  }
+    @{ Source = "$SourceBase/LH1.Lakehouse/Files";   Dest = "$DestBase/LH1.Lakehouse/Files"   }
     # Uncomment below to also sync a Warehouse:
-    # @{ Source = "$SourceBase/WH1.Warehouse/Tables"; Dest = "$DestBase/WH1.Warehouse/Tables"; Mode = "mirror" }
+    # @{ Source = "$SourceBase/WH1.Warehouse/Tables"; Dest = "$DestBase/WH1.Warehouse/Tables" }
 )
 
 # Resolve the main script (assumed to be alongside this wrapper)

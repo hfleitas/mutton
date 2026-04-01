@@ -255,12 +255,15 @@ function Build-AzCopyArgs {
         $args.Add("--delete-destination=true")
     }
 
-    # mirror mode uses copy verb with overwrite-always to capture Delta table changes
+    # mirror mode uses copy verb to capture Delta table changes
     # (Delta UPDATEs create new parquet + log files that 'sync' may miss due to LMT caching)
+    # Uses ifSourceNewer instead of true — OneLake rejects DELETE calls (403) that overwrite=true triggers
+    # Skips folder properties — OneLake returns 409 on folder property transfers
     if ($RunMode -eq "mirror") {
         $args.Add("--as-subdir=false")
-        $args.Add("--overwrite=true")
+        $args.Add("--overwrite=ifSourceNewer")
         $args.Add("--s2s-preserve-access-tier=false")
+        $args.Add("--s2s-preserve-properties=false")
         $args.Add("--check-length=false")
     }
 
