@@ -1,0 +1,38 @@
+CLAIMS CALL TRANSCRIPT
+Call Date: 2026-03-30
+Claim Number: CLM98765
+Policy Number: PD774201
+
+[00:00] SARAH (Representative): Thank you for calling National Auto Insurance, my name is Sarah. How can I help you today?
+
+[00:05] JOHN MARTINEZ (Customer): Hi Sarah, my name is John Martinez. I was involved in a car accident yesterday and I need to file a claim.
+
+[00:12] SARAH (Representative): I'm sorry to hear that, Mr. Martinez. Are you okay? Was anyone injured?
+
+[00:17] JOHN MARTINEZ (Customer): Yes, I'm fine, just a little shaken up. No injuries thankfully. But my car has significant damage to the front bumper and hood.
+
+[00:25] SARAH (Representative): I'm glad you're safe. Let me pull up your policy. Can you provide me your policy number please?
+
+[00:31] JOHN MARTINEZ (Customer): Sure, it's PD774201.
+
+[00:34] SARAH (Representative): Thank you. I see your policy here. You have comprehensive coverage with a five hundred dollar deductible. Can you tell me what happened?
+
+[00:42] JOHN MARTINEZ (Customer): I was driving on Highway 95 heading south around 3 PM yesterday. Traffic slowed down suddenly and the car in front of me stopped. I braked but couldn't stop in time and rear-ended them. It was raining pretty heavily.
+
+[00:55] SARAH (Representative): Understood. And did you get the other driver's information?
+
+[00:59] JOHN MARTINEZ (Customer): Yes, I exchanged insurance information with the other driver. Her name is Lisa Chen and she drives a blue Toyota Camry, 2024 model.
+
+[01:08] SARAH (Representative): Perfect. And was a police report filed?
+
+[01:11] JOHN MARTINEZ (Customer): Yes, the officers arrived about twenty minutes after the accident. The report number is 2026-0330-4451.
+
+[01:18] SARAH (Representative): Great, that's very helpful. I'm going to open claim number CLM98765 for you. You'll need to take your vehicle to one of our approved repair shops for an estimate. I can text you the nearest locations. Is the car still drivable?
+
+[01:30] JOHN MARTINEZ (Customer): It's drivable but the hood doesn't close all the way. I'd rather get it looked at soon.
+
+[01:36] SARAH (Representative): Absolutely. We'll have an adjuster contact you within 24 to 48 hours to schedule an inspection. Is there anything else I can help you with today?
+
+[01:44] JOHN MARTINEZ (Customer): No, that covers everything. Thank you so much for your help, Sarah.
+
+[01:48] SARAH (Representative): You're welcome, Mr. Martinez. We'll take good care of your claim. Have a safe rest of your day.
