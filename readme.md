@@ -1,6 +1,11 @@
 # Fabric Lakehouse BCDR Sync with AzCopy
 
-Syncs a Microsoft Fabric Lakehouse between two workspaces (BCDR1 → BCDR2) using AzCopy over OneLake. Supports initial full copy, incremental sync, and a Delta-aware mirror mode for tables.
+Syncs a Microsoft Fabric Lakehouse between two workspaces (BCDR1 → BCDR2) using AzCopy over OneLake. Supports initial full copy, incremental sync, and a Delta-aware mirror 
+mode for tables.
+
+##  DISCLAIMER
+
+The information contained in this email and any accompanying materials (including, but not limited to, scripts, sample codes, etc.) are provided "AS-IS" and "WITH ALL FAULTS." Any estimated pricing information is provided solely for demonstration purposes and does not represent final pricing and Microsoft assumes no liability arising from your use of the information. Microsoft makes NO GUARANTEES OR WARRANTIES OF ANY KIND, WHETHER EXPRESSED OR IMPLIED, in providing this information, including any pricing information.
 
 ## Prerequisites
 
