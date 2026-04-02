@@ -5,7 +5,7 @@ mode for tables.
 
 ##  DISCLAIMER
 
-The information contained in this code-repository and any accompanying materials (including, but not limited to, scripts, sample codes, etc.) are provided "AS-IS" and "WITH ALL FAULTS." Any estimated pricing information is provided solely for demonstration purposes and does not represent final pricing. Microsoft or I, Hiram Fleitas, assume no liability arising from your use of the information or any accompanying material. Microsoft or contributors of this repo, as defined below,  make NO GUARANTEES OR WARRANTIES OF ANY KIND, WHETHER EXPRESSED OR IMPLIED, in providing this information, including any pricing information.
+The information contained in this code-repository and any accompanying materials (including, but not limited to, scripts, sample codes, etc.) are provided "AS-IS" and "WITH ALL FAULTS." Any estimated pricing information is provided solely for demonstration purposes and does not represent final pricing. Microsoft, Hiram Fleitas, and/or contributors of this repo (refered to as Parties thereof), assume no liability arising from your use of the information or any accompanying material. The Parties, as mentioned previously, make NO GUARANTEES OR WARRANTIES OF ANY KIND, WHETHER EXPRESSED OR IMPLIED, in providing this information, including any pricing information.
 
 ## Prerequisites
 
