@@ -116,6 +116,8 @@ param(
     [ValidateSet("CONFIRMED")]
     [string]$SafetyTag,
 
+    [switch]$AllowReverse,
+
     [string]$AzCopyPath = "azcopy"
 )
 
@@ -149,6 +151,11 @@ function Assert-DirectionSafety {
 
     $srcWorkspace = $srcSegments[0]
     $dstWorkspace = $dstSegments[0]
+
+    if ($AllowReverse) {
+        Write-Host "[Safety] AllowReverse is set – skipping direction guards: $srcWorkspace -> $dstWorkspace" -ForegroundColor Yellow
+        return
+    }
 
     # Guard: source must not be the replica workspace
     if ($srcWorkspace -match '(?i)^BCDR2$') {
