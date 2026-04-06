@@ -156,6 +156,28 @@ Then mirror the tables to BCDR2:
 - In BCDR2 `adjuster_dim`: Adjuster_ID 101 has `Experience_Years = 15`.
 - In BCDR2 `adjuster_dim`: Adjuster_ID 109 is **deleted** (row no longer exists).
 
+### Stage 5 — Reverse Sync / Failback (BCDR2 → BCDR1)
+
+If the primary (BCDR1) needs to be restored from the replica (BCDR2), use the `-AllowReverse` switch to bypass the built-in direction safety guard.
+
+```powershell
+# 5a. Reverse copy — Files
+.\Sync-FabricLakehouse.ps1 `
+    -SourceUri "https://onelake.dfs.fabric.microsoft.com/BCDR2/LH1.Lakehouse/Files" `
+    -DestUri   "https://onelake.dfs.fabric.microsoft.com/BCDR1/LH1.Lakehouse/Files" `
+    -Mode copy -SafetyTag CONFIRMED -AllowReverse
+
+# 5b. Reverse copy — Tables
+.\Sync-FabricLakehouse.ps1 `
+    -SourceUri "https://onelake.dfs.fabric.microsoft.com/BCDR2/LH1.Lakehouse/Tables" `
+    -DestUri   "https://onelake.dfs.fabric.microsoft.com/BCDR1/LH1.Lakehouse/Tables" `
+    -Mode copy -SafetyTag CONFIRMED -AllowReverse
+```
+
+**Validate:** Open BCDR1 → LH1 and confirm Files and Tables match BCDR2.
+
+> **Note:** Without `-AllowReverse`, the script blocks any attempt to use BCDR2 as the source or BCDR1 as the destination. This prevents accidental overwrites during normal operations.
+
 ### Run All Stages at Once
 
 After initial setup, use the wrapper to sync everything (Tables via mirror, Files via sync):
