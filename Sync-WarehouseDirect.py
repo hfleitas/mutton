@@ -191,8 +191,10 @@ def load_table_incremental(table_name, primary_key):
     ON target.[{primary_key}] = source.[{primary_key}]
     WHEN MATCHED THEN
         UPDATE SET {update_set}
-    WHEN NOT MATCHED THEN
-        INSERT ({insert_cols}) VALUES ({insert_vals});
+    WHEN NOT MATCHED BY TARGET THEN
+        INSERT ({insert_cols}) VALUES ({insert_vals})
+    WHEN NOT MATCHED BY SOURCE THEN
+        DELETE;
     """
 
     try:
