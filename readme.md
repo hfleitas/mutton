@@ -54,6 +54,7 @@ Complete these one-time steps in the [Fabric portal](https://app.fabric.microsof
 | `lh1_files/` | Sample CSV files (8 tables: claims, customers, policies, etc.) |
 | `notebook_helper.py` | Helper to invoke sync from a Fabric notebook via subprocess |
 | `load_files_to_tables.py` | Standalone Python version of the table-load notebook |
+| `Sync-WarehouseDirect.py` | Fabric notebook script — syncs Warehouse tables directly via JDBC (no staging Lakehouse) |
 | `logs/` | Structured JSONL logs written by the sync scripts |
 
 ## Sync Modes
@@ -188,6 +189,63 @@ After initial setup, use the wrapper to sync everything (Tables via mirror, File
 
 ![Sync'ed](https://github.com/user-attachments/assets/99e4f6f2-c068-433f-aa6d-b67e46bc961f "Sync'ed")
 
+
+## Warehouse Direct Sync (Sync-WarehouseDirect.py)
+
+Syncs Warehouse tables from one workspace to another **directly via JDBC** — no intermediate staging Lakehouse required. Reads source tables from OneLake (Spark Delta reader) and writes to the target Warehouse's SQL endpoint.
+
+### Prerequisites
+
+1. A **Warehouse** (e.g., `DW1`) must exist in both the source and target workspaces.
+2. Get the **SQL connection string** for the target Warehouse:
+   - Fabric portal → target workspace → Warehouse → Settings (gear icon) → **SQL connection string**
+   - It looks like: `xxxxxxxx.datawarehouse.fabric.microsoft.com`
+3. Your notebook identity must have **read access** to the source workspace.
+
+### Configuration
+
+Open `Sync-WarehouseDirect.py` and update the variables at the top:
+
+| Variable | Description | Example |
+|----------|-------------|---------|
+| `SOURCE_WORKSPACE` | Source workspace name | `BCDR1` |
+| `SOURCE_WAREHOUSE` | Source warehouse name | `DW1` |
+| `SOURCE_ITEM_TYPE` | `"Warehouse"` or `"Lakehouse"` | `Warehouse` |
+| `TARGET_WAREHOUSE` | Target warehouse name | `DW1` |
+| `SQL_ENDPOINT` | Target warehouse SQL connection string | `xxx.datawarehouse.fabric.microsoft.com` |
+| `SCHEMA` | Schema name | `dbo` |
+| `LOAD_MODE` | `"full"` (truncate + reload) or `"incremental"` (MERGE/upsert) | `full` |
+| `TABLES` | Dict of `{ "table_name": "primary_key_column" }` | `{ "TABLE1": "id" }` |
+
+### Usage
+
+1. **Create a Fabric notebook** in the target workspace (e.g., BCDR2).
+2. **Paste or import** `Sync-WarehouseDirect.py` into the notebook.
+3. **Update** `SQL_ENDPOINT` and the `TABLES` dictionary with your actual values.
+4. **Set `LOAD_MODE`:**
+   - `"full"` — for initial load (truncates target table, then inserts all rows).
+   - `"incremental"` — for ongoing syncs (MERGE/upsert using the primary key).
+5. **Run all cells.**
+
+```text
+# Example output
+============================================================
+  Warehouse Direct Sync (no staging)
+  Source : BCDR1/DW1 (OneLake)
+  Target : DW1 (JDBC: your-endpoint.datawarehouse.fabric.microsoft.com)
+  Mode   : full
+============================================================
+[FULL LOAD] dbo.TABLE1
+  Reading from: abfss://BCDR1@onelake.dfs.fabric.microsoft.com/DW1.Warehouse/Tables/dbo/TABLE1
+  Rows read: 1000
+  Writing to DW1.dbo.TABLE1 via JDBC...
+  Loaded 1000 rows into DW1.dbo.TABLE1
+============================================================
+  Complete. Success: 1, Failed: 0
+============================================================
+```
+
+> **Tip:** Use `"full"` mode for the initial load, then switch to `"incremental"` for subsequent syncs. Incremental mode requires a primary key column for each table.
 
 ## Contributors
 
